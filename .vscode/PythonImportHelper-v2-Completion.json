@@ -44,6 +44,22 @@
         "documentation": {}
     },
     {
+        "label": "FastMCP",
+        "importPath": "mcp.server.fastmcp",
+        "description": "mcp.server.fastmcp",
+        "isExtraImport": true,
+        "detail": "mcp.server.fastmcp",
+        "documentation": {}
+    },
+    {
+        "label": "PdfReader",
+        "importPath": "pypdf",
+        "description": "pypdf",
+        "isExtraImport": true,
+        "detail": "pypdf",
+        "documentation": {}
+    },
+    {
         "label": "bin_dir",
         "kind": 5,
         "importPath": ".venv.bin.activate_this",
@@ -122,6 +138,24 @@
         "description": ".venv.bin.activate_this",
         "peekOfCode": "sys.prefix = base",
         "detail": ".venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "pdf_master_tool",
+        "kind": 2,
+        "importPath": "agents.mcp_servers.pdf-master",
+        "description": "agents.mcp_servers.pdf-master",
+        "peekOfCode": "def pdf_master_tool(file_path:str)-> str:\n    \"\"\"\n    This tool is used to process PDF files.\n    It can extract text\n    \"\"\"\n    reader = PdfReader(file_path)\n    content = \"\"\n    for page in reader.pages:\n        content += page.extract_text() + \"\\n\"\n    return content",
+        "detail": "agents.mcp_servers.pdf-master",
+        "documentation": {}
+    },
+    {
+        "label": "mcp",
+        "kind": 5,
+        "importPath": "agents.mcp_servers.pdf-master",
+        "description": "agents.mcp_servers.pdf-master",
+        "peekOfCode": "mcp = FastMCP(\"PDF Master\")\n@mcp.tool()\ndef pdf_master_tool(file_path:str)-> str:\n    \"\"\"\n    This tool is used to process PDF files.\n    It can extract text\n    \"\"\"\n    reader = PdfReader(file_path)\n    content = \"\"\n    for page in reader.pages:",
+        "detail": "agents.mcp_servers.pdf-master",
         "documentation": {}
     },
     {

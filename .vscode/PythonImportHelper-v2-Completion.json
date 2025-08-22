@@ -52,6 +52,55 @@
         "documentation": {}
     },
     {
+        "label": "FastMCP",
+        "importPath": "mcp.server.fastmcp",
+        "description": "mcp.server.fastmcp",
+        "isExtraImport": true,
+        "detail": "mcp.server.fastmcp",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "base64",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "PdfReader",
         "importPath": "pypdf",
         "description": "pypdf",
@@ -141,6 +190,33 @@
         "documentation": {}
     },
     {
+        "label": "generate_image_from_prompt",
+        "kind": 2,
+        "importPath": "agents.mcp_servers.image-generator",
+        "description": "agents.mcp_servers.image-generator",
+        "peekOfCode": "def generate_image_from_prompt(prompt:str)-> str:\n    \"\"\"\n    This tool is used to generate images from text prompts.\n    \"\"\"\n    response = client.responses.create(\n        model=\"gpt-5-nano\",\n        input=prompt,\n        tools=[{\"type\": \"image_generation\"}],\n    )\n    image_data = [",
+        "detail": "agents.mcp_servers.image-generator",
+        "documentation": {}
+    },
+    {
+        "label": "mcp",
+        "kind": 5,
+        "importPath": "agents.mcp_servers.image-generator",
+        "description": "agents.mcp_servers.image-generator",
+        "peekOfCode": "mcp = FastMCP(\"Image Generator\")\nclient = OpenAI() \n@mcp.tool()\ndef generate_image_from_prompt(prompt:str)-> str:\n    \"\"\"\n    This tool is used to generate images from text prompts.\n    \"\"\"\n    response = client.responses.create(\n        model=\"gpt-5-nano\",\n        input=prompt,",
+        "detail": "agents.mcp_servers.image-generator",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "agents.mcp_servers.image-generator",
+        "description": "agents.mcp_servers.image-generator",
+        "peekOfCode": "client = OpenAI() \n@mcp.tool()\ndef generate_image_from_prompt(prompt:str)-> str:\n    \"\"\"\n    This tool is used to generate images from text prompts.\n    \"\"\"\n    response = client.responses.create(\n        model=\"gpt-5-nano\",\n        input=prompt,\n        tools=[{\"type\": \"image_generation\"}],",
+        "detail": "agents.mcp_servers.image-generator",
+        "documentation": {}
+    },
+    {
         "label": "pdf_master_tool",
         "kind": 2,
         "importPath": "agents.mcp_servers.pdf-master",
@@ -156,6 +232,24 @@
         "description": "agents.mcp_servers.pdf-master",
         "peekOfCode": "mcp = FastMCP(\"PDF Master\")\n@mcp.tool()\ndef pdf_master_tool(file_path:str)-> str:\n    \"\"\"\n    This tool is used to process PDF files.\n    It can extract text\n    \"\"\"\n    reader = PdfReader(file_path)\n    content = \"\"\n    for page in reader.pages:",
         "detail": "agents.mcp_servers.pdf-master",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "agents.mcp_servers.test",
+        "description": "agents.mcp_servers.test",
+        "peekOfCode": "client = OpenAI() \nresponse = client.responses.create(\n    model=\"gpt-5\",\n    input=\"Generate an image of gray tabby cat hugging an otter with an orange scarf\",\n    tools=[{\"type\": \"image_generation\"}],\n)\nprint(response.output, 'output')",
+        "detail": "agents.mcp_servers.test",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "agents.mcp_servers.test",
+        "description": "agents.mcp_servers.test",
+        "peekOfCode": "response = client.responses.create(\n    model=\"gpt-5\",\n    input=\"Generate an image of gray tabby cat hugging an otter with an orange scarf\",\n    tools=[{\"type\": \"image_generation\"}],\n)\nprint(response.output, 'output')",
+        "detail": "agents.mcp_servers.test",
         "documentation": {}
     },
     {

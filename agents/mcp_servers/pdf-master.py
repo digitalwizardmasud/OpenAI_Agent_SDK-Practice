@@ -17,4 +17,4 @@ def pdf_master_tool(file_path:str)-> str:
 
 
 if __name__ == "__main__":
-    mcp.run(transport='stdio')
+    mcp.run(transport='sse')
